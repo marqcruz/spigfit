@@ -8,15 +8,25 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Baixar projeto
+        uses: actions/checkout@v5
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v5
         with:
           node-version: 22
-          cache: npm
-      - run: npm install
-      - run: npm run typecheck
-      - run: npm run build
+          package-manager-cache: false
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Verificar TypeScript
+        run: npm run typecheck
+
+      - name: Compilar sistema
+        run: npm run build
         env:
           NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_example

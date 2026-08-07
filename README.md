@@ -73,3 +73,5 @@ Abra `preview/index.html` diretamente no navegador. Essa página é apenas uma d
 - A `SUPABASE_SECRET_KEY` nunca deve ser colocada em variável `NEXT_PUBLIC_` nem enviada para terceiros.
 - As regras RLS do banco limitam cada aluno aos próprios dados.
 - Use repositório privado e ative autenticação em dois fatores no GitHub e Supabase.
+
+Nova validação do projeto.
